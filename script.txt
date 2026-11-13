@@ -1,0 +1,106 @@
+curl http://localhost:5001/api/v1/peticion/0/reset   -X POST
+curl http://localhost:5001/api/v1/peticion/1/reset   -X POST 
+curl http://localhost:5001/api/v1/peticion/2/reset   -X POST 
+curl http://localhost:5001/api/v1/peticion/3/reset   -X POST 
+curl http://localhost:5001/api/v1/peticion/4/reset   -X POST 
+curl http://localhost:5001/api/v1/peticion/5/reset   -X POST 
+curl http://localhost:5001/api/v1/peticion/6/reset   -X POST 
+curl http://localhost:5001/api/v1/peticion/7/reset   -X POST 
+curl http://localhost:5001/api/v1/peticion/8/reset   -X POST 
+curl http://localhost:5001/api/v1/peticion/9/reset   -X POST 
+
+echo "";
+
+curl http://localhost:5001/api/v1/peticion/0/add   -X POST   -H "Content-Type: application/json"   -d '{"valor": 15}'
+curl http://localhost:5001/api/v1/peticion/1/add   -X POST   -H "Content-Type: application/json"   -d '{"valor": 15}'
+curl http://localhost:5001/api/v1/peticion/2/add   -X POST   -H "Content-Type: application/json"   -d '{"valor": 15}'
+curl http://localhost:5001/api/v1/peticion/3/add   -X POST   -H "Content-Type: application/json"   -d '{"valor": 15}'
+curl http://localhost:5001/api/v1/peticion/4/add   -X POST   -H "Content-Type: application/json"   -d '{"valor": 15}'
+
+echo "";
+
+curl http://localhost:5002/api/v1/peticion/0/add   -X POST   -H "Content-Type: application/json"   -d '{"valor": 7}'
+curl http://localhost:5002/api/v1/peticion/1/add   -X POST   -H "Content-Type: application/json"   -d '{"valor": 7}'
+curl http://localhost:5002/api/v1/peticion/2/add   -X POST   -H "Content-Type: application/json"   -d '{"valor": 7}'
+curl http://localhost:5002/api/v1/peticion/3/add   -X POST   -H "Content-Type: application/json"   -d '{"valor": 7}'
+curl http://localhost:5002/api/v1/peticion/4/add   -X POST   -H "Content-Type: application/json"   -d '{"valor": 7}'
+
+echo "";
+
+curl http://localhost:5003/api/v1/peticion/0/add   -X POST   -H "Content-Type: application/json"   -d '{"valor": 8}'
+curl http://localhost:5003/api/v1/peticion/1/add   -X POST   -H "Content-Type: application/json"   -d '{"valor": 8}'
+curl http://localhost:5003/api/v1/peticion/2/add   -X POST   -H "Content-Type: application/json"   -d '{"valor": 8}'
+curl http://localhost:5003/api/v1/peticion/3/add   -X POST   -H "Content-Type: application/json"   -d '{"valor": 8}'
+curl http://localhost:5003/api/v1/peticion/4/add   -X POST   -H "Content-Type: application/json"   -d '{"valor": 8}'
+
+echo "";
+
+curl http://localhost:5001/api/v1/peticion/0/sub   -X POST   -H "Content-Type: application/json"   -d '{"valor": 2}'
+curl http://localhost:5001/api/v1/peticion/1/sub   -X POST   -H "Content-Type: application/json"   -d '{"valor": 2}'
+curl http://localhost:5001/api/v1/peticion/2/sub   -X POST   -H "Content-Type: application/json"   -d '{"valor": 2}'
+curl http://localhost:5001/api/v1/peticion/3/sub   -X POST   -H "Content-Type: application/json"   -d '{"valor": 2}'
+curl http://localhost:5001/api/v1/peticion/4/sub   -X POST   -H "Content-Type: application/json"   -d '{"valor": 2}'
+
+echo "";
+
+curl http://localhost:5002/api/v1/peticion/0/sub   -X POST   -H "Content-Type: application/json"   -d '{"valor": 6}'
+curl http://localhost:5002/api/v1/peticion/1/sub   -X POST   -H "Content-Type: application/json"   -d '{"valor": 6}'
+curl http://localhost:5002/api/v1/peticion/2/sub   -X POST   -H "Content-Type: application/json"   -d '{"valor": 6}'
+curl http://localhost:5002/api/v1/peticion/3/sub   -X POST   -H "Content-Type: application/json"   -d '{"valor": 6}'
+curl http://localhost:5002/api/v1/peticion/4/sub   -X POST   -H "Content-Type: application/json"   -d '{"valor": 6}'
+
+echo "";
+
+curl http://localhost:5003/api/v1/peticion/0/sub   -X POST   -H "Content-Type: application/json"   -d '{"valor": 10}'
+curl http://localhost:5003/api/v1/peticion/1/sub   -X POST   -H "Content-Type: application/json"   -d '{"valor": 10}'
+curl http://localhost:5003/api/v1/peticion/2/sub   -X POST   -H "Content-Type: application/json"   -d '{"valor": 10}'
+curl http://localhost:5003/api/v1/peticion/3/sub   -X POST   -H "Content-Type: application/json"   -d '{"valor": 10}'
+curl http://localhost:5003/api/v1/peticion/4/sub   -X POST   -H "Content-Type: application/json"   -d '{"valor": 10}'
+
+echo "";
+
+curl http://localhost:5004/api/v1/peticion/0/mult   -X POST   -H "Content-Type: application/json"   -d '{"valor": 12}'
+curl http://localhost:5004/api/v1/peticion/1/mult   -X POST   -H "Content-Type: application/json"   -d '{"valor": 12}'
+curl http://localhost:5004/api/v1/peticion/2/mult   -X POST   -H "Content-Type: application/json"   -d '{"valor": 12}'
+curl http://localhost:5004/api/v1/peticion/3/mult   -X POST   -H "Content-Type: application/json"   -d '{"valor": 12}'
+curl http://localhost:5004/api/v1/peticion/4/mult   -X POST   -H "Content-Type: application/json"   -d '{"valor": 12}'
+
+echo "";
+
+curl http://localhost:5005/api/v1/peticion/5/sqrt   -X POST   -H "Content-Type: application/json"   -d '{"valor": 12}'
+curl http://localhost:5005/api/v1/peticion/6/sqrt   -X POST   -H "Content-Type: application/json"   -d '{"valor": 12}'
+curl http://localhost:5005/api/v1/peticion/7/sqrt   -X POST   -H "Content-Type: application/json"   -d '{"valor": 12}'
+curl http://localhost:5005/api/v1/peticion/8/sqrt   -X POST   -H "Content-Type: application/json"   -d '{"valor": 12}'
+curl http://localhost:5005/api/v1/peticion/9/sqrt   -X POST   -H "Content-Type: application/json"   -d '{"valor": 12}'
+
+echo "";
+
+curl http://localhost:5005/api/v1/peticion/5/mean   -X POST -H "Content-Type: application/json" -d '{"valores": [2, 4, 6, 8, 10]}'
+curl http://localhost:5005/api/v1/peticion/6/mean   -X POST -H "Content-Type: application/json" -d '{"valores": [2, 4, 6, 8, 10]}'
+curl http://localhost:5005/api/v1/peticion/7/mean   -X POST -H "Content-Type: application/json" -d '{"valores": [2, 4, 6, 8, 10]}'
+curl http://localhost:5005/api/v1/peticion/8/mean   -X POST -H "Content-Type: application/json" -d '{"valores": [2, 4, 6, 8, 10]}'
+curl http://localhost:5005/api/v1/peticion/9/mean   -X POST -H "Content-Type: application/json" -d '{"valores": [2, 4, 6, 8, 10]}'
+
+echo "";
+
+curl http://localhost:5005/api/v1/peticion/5/std    -X POST -H "Content-Type: application/json" -d '{"valores": [2, 4, 4, 4, 5, 5, 7, 9]}'
+curl http://localhost:5005/api/v1/peticion/6/std    -X POST -H "Content-Type: application/json" -d '{"valores": [2, 4, 4, 4, 5, 5, 7, 9]}'
+curl http://localhost:5005/api/v1/peticion/7/std    -X POST -H "Content-Type: application/json" -d '{"valores": [2, 4, 4, 4, 5, 5, 7, 9]}'
+curl http://localhost:5005/api/v1/peticion/8/std    -X POST -H "Content-Type: application/json" -d '{"valores": [2, 4, 4, 4, 5, 5, 7, 9]}'
+curl http://localhost:5005/api/v1/peticion/9/std    -X POST -H "Content-Type: application/json" -d '{"valores": [2, 4, 4, 4, 5, 5, 7, 9]}'
+
+echo "";
+
+curl http://localhost:5001/api/v1/peticion/0
+curl http://localhost:5001/api/v1/peticion/1
+curl http://localhost:5001/api/v1/peticion/2
+curl http://localhost:5001/api/v1/peticion/3
+curl http://localhost:5001/api/v1/peticion/4
+
+echo "";
+
+curl -s http://localhost:5001/api/v1/metricas
+curl -s http://localhost:5002/api/v1/metricas
+curl -s http://localhost:5003/api/v1/metricas
+curl -s http://localhost:5004/api/v1/metricas
+curl -s http://localhost:5005/api/v1/metricas

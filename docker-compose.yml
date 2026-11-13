@@ -1,0 +1,137 @@
+version: '3.8'
+
+services:
+  zookeeper1:
+    image: zookeeper:3.9
+    container_name: zookeeper1
+    hostname: zookeeper1
+    ports:
+      - "2181:2181"
+    user: root
+    environment:
+      ZOO_MY_ID: 1
+      ZOO_SERVERS: server.1=zookeeper1:2888:3888 server.2=zookeeper2:2888:3888 server.3=zookeeper3:2888:3888
+      ZOO_CLIENT_PORT_ADDRESS: 0.0.0.0
+      ZOO_CLIENT_PORT: 2181
+    volumes:
+      - ./zoo.cfg:/conf/zoo.cfg
+      - ./log4j.properties:/conf/log4j.properties
+    networks:
+      - zk-net
+
+  zookeeper2:
+    image: zookeeper:3.9
+    container_name: zookeeper2
+    hostname: zookeeper2
+    ports:
+      - "2182:2181"
+    environment:
+      ZOO_MY_ID: 2
+      ZOO_SERVERS: server.1=zookeeper1:2888:3888 server.2=zookeeper2:2888:3888 server.3=zookeeper3:2888:3888
+      ZOO_CLIENT_PORT_ADDRESS: 0.0.0.0
+      ZOO_CLIENT_PORT: 2181
+    networks:
+      - zk-net
+
+  zookeeper3:
+    image: zookeeper:3.9
+    container_name: zookeeper3
+    hostname: zookeeper3
+    ports:
+      - "2183:2181"
+    environment:
+      ZOO_MY_ID: 3
+      ZOO_SERVERS: server.1=zookeeper1:2888:3888 server.2=zookeeper2:2888:3888 server.3=zookeeper3:2888:3888
+      ZOO_CLIENT_PORT_ADDRESS: 0.0.0.0
+      ZOO_CLIENT_PORT: 2181
+    networks:
+      - zk-net
+
+  calc1:
+    build: .
+    container_name: calc1
+    hostname: calc1
+    ports:
+      - "5001:5000"
+    environment:
+      - NODE_ID=1
+      - ZK_HOSTS=zookeeper1:2181,zookeeper2:2181,zookeeper3:2181
+      - FLASK_PORT=5000
+    depends_on:
+      - zookeeper1
+      - zookeeper2
+      - zookeeper3
+    networks:
+      - zk-net
+
+  calc2:
+    build: .
+    container_name: calc2
+    hostname: calc2
+    ports:
+      - "5002:5000"
+    environment:
+      - NODE_ID=2
+      - ZK_HOSTS=zookeeper1:2181,zookeeper2:2181,zookeeper3:2181
+      - FLASK_PORT=5000
+    depends_on:
+      - zookeeper1
+      - zookeeper2
+      - zookeeper3
+    networks:
+      - zk-net
+  
+  calc3:
+    build: .
+    container_name: calc3
+    hostname: calc3
+    ports:
+      - "5003:5000"
+    environment:
+      - NODE_ID=3
+      - ZK_HOSTS=zookeeper1:2181,zookeeper2:2181,zookeeper3:2181
+      - FLASK_PORT=5000
+    depends_on:
+      - zookeeper1
+      - zookeeper2
+      - zookeeper3
+    networks:
+      - zk-net
+
+  calc4:
+    build: .
+    container_name: calc4
+    hostname: calc4
+    ports:
+      - "5004:5000"
+    environment:
+      - NODE_ID=4
+      - ZK_HOSTS=zookeeper1:2181,zookeeper2:2181,zookeeper3:2181
+      - FLASK_PORT=5000
+    depends_on:
+      - zookeeper1
+      - zookeeper2
+      - zookeeper3
+    networks:
+      - zk-net
+
+  calc5:
+    build: .
+    container_name: calc5
+    hostname: calc5
+    ports:
+      - "5005:5000"
+    environment:
+      - NODE_ID=5
+      - ZK_HOSTS=zookeeper1:2181,zookeeper2:2181,zookeeper3:2181
+      - FLASK_PORT=5000
+    depends_on:
+      - zookeeper1
+      - zookeeper2
+      - zookeeper3
+    networks:
+      - zk-net
+
+networks:
+  zk-net:
+    driver: bridge
